@@ -86,14 +86,14 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
- url-pretty: "ryanpmccaffrey.com"  # eg. "deanattali.com/beautiful-jekyll"
+# url-pretty: "ryanpmccaffrey.com"  # eg. "deanattali.com/beautiful-jekyll"
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
 #disqus: ""
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: "UA-89904130-1"
 
 # Facebook App ID
 # fb_app_id: ""
