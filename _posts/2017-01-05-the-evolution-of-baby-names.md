@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Evolution of Baby Names
-subtitle: Category - Data Visualization
+subtitle: "Category: Data Visualization"
 ---
 
 Everyone understands names.  Everyone has one.  But, do we know how they've evolved over the years?  The purpose of this project was to try to analyze how popular names of boys and girls have evolved over time in the US.  I also wanted to know whether or not a rise in popularity of a particular figure (e.g., movie character, famous politician, etc.) significantly affects the popularity of that name in subsequent years.  I was looking for an easy yet interesting data set to practice my data visualization skills and this looked like the perfect fit.
