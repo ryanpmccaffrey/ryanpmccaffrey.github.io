@@ -26,7 +26,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #0085a1;
+  color: #FF3E3E;
 }
 blockquote {
   color: #808080;
@@ -64,12 +64,12 @@ hr.small {
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #FF3E3E;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #FF3E3E;
 }
 img::selection {
   color: white;
@@ -118,7 +118,7 @@ img {
 .navbar-custom .navbar-brand:focus ,
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #0085a1;
+  color: #FF3E3E;
 }
 
 .navbar-custom .navbar-brand-logo {
@@ -318,7 +318,7 @@ footer .theme-by {
 .post-preview a:focus,
 .post-preview a:hover {
   text-decoration: none;
-  color: #0085a1;
+  color: #FF3E3E;
 }
 
 .post-preview .post-title {
@@ -512,6 +512,7 @@ footer .theme-by {
   }  
   .intro-header .page-heading h1 {
     font-size: 80px;
+    font-family: "Droid Serif";
   }
   .intro-header .post-heading h1 {
     font-size: 50px;
@@ -586,8 +587,8 @@ footer .theme-by {
 .pager li a:hover,
 .pager li a:focus {
   color: #FFF;
-  background: #0085a1;
-  border: 1px solid #0085a1;
+  background: #FF3E3E;
+  border: 1px solid #FF3E3E;
 }
 
 .pager {
