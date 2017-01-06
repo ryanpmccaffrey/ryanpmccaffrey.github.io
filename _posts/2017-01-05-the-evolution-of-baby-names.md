@@ -1,6 +1,6 @@
 ---
 layout: post
-img: "/img/baby.jpg"
+image: /img/baby.jpg
 title: The Evolution of Baby Names
 subtitle: "Category: Data Visualization"
 ---
