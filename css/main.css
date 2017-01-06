@@ -507,12 +507,11 @@ footer .theme-by {
   }	
   .intro-header.big-img .page-heading,
   .intro-header.big-img .post-heading  {
-    padding: 200px 0 254px 0;
+    padding: 200px 0px 254px 0px;
     margin-top: -54px;
   }  
   .intro-header .page-heading h1 {
-    font-size: 80px
-    font-family: "Droid Serif";
+    font-size: 80px;
   }
   .intro-header .post-heading h1 {
     font-size: 50px;
