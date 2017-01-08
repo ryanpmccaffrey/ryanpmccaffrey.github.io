@@ -2,7 +2,6 @@
 layout: page
 title: About me
 subtitle: " "
-bigimg: /img/ryan_avatar.jpg
 ---
 
 ![Ryan Avatar](/img/ryan_avatar.jpg)
