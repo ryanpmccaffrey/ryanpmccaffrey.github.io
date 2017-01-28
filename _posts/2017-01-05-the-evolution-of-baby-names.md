@@ -1,7 +1,7 @@
 ---
 layout: post
 image: /img/baby.jpg
-title: The Evolution of Baby Names
+title: SAT Scores in the United States
 subtitle: "Category: Data Visualization"
 ---
 
