@@ -13,14 +13,13 @@ This purpose of this project was to demonstrate blah blah blah.
 ## Step 1: Open the `sat_scores.csv` file. Investigate the data, and answer the questions below.
 
 
-
-{% highlight python %}
+```python
 import numpy as np
 import scipy.stats as stats
 import csv
 import seaborn as sns
 %matplotlib inline
-{% highlight python %}
+```
 
 ##### 1. What does the data describe?
 
