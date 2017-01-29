@@ -5,6 +5,9 @@ title: SAT Scores in the United States
 subtitle: "Category: Data Visualization"
 ---
 
+This purpose of this project was to demonstrate blah blah blah.
+
+
 # Project 1
 
 ## Step 1: Open the `sat_scores.csv` file. Investigate the data, and answer the questions below.
