@@ -1,6 +1,6 @@
 ---
 layout: post
-image: 
+image: '/img/sat.jpg'
 title: SAT Scores in the United States
 subtitle: "Category: Data Visualization"
 ---
