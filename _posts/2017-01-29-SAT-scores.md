@@ -507,7 +507,7 @@ sat_df
 </table>
 </div>
 
-  
+ Let's check the datatypes of each column. 
 
 
 ```python
