@@ -620,7 +620,7 @@ plt.grid(True)
 ```
 
 
-![png](blog_project_1_files/blog_project_1_23_0.png)
+![png](/img/blog_project_1_files/blog_project_1_23_0.png)
 
 
 
@@ -634,7 +634,7 @@ plt.grid(True)
 ```
 
 
-![png](blog_project_1_files/blog_project_1_24_0.png)
+![png](/img/blog_project_1_files/blog_project_1_24_0.png)
 
 
 
@@ -648,7 +648,7 @@ plt.grid(True)
 ```
 
 
-![png](blog_project_1_files/blog_project_1_25_0.png)
+![png](/img/blog_project_1_files/blog_project_1_25_0.png)
 
 
 To better understand the relationships among the data we use the Seaborn package to create pair plots.
@@ -666,7 +666,7 @@ sns.pairplot(sat_df)
 
 
 
-![png](blog_project_1_files/blog_project_1_27_1.png)
+![png](/img/blog_project_1_files/blog_project_1_27_1.png)
 
 
 
@@ -682,7 +682,7 @@ sns.jointplot(x='Math', y='Verbal', data=sat_df, color='b')
 
 
 
-![png](blog_project_1_files/blog_project_1_28_1.png)
+![png](/img/blog_project_1_files/blog_project_1_28_1.png)
 
 
 
@@ -698,12 +698,9 @@ sns.jointplot(x='Verbal', y='Rate', data=sat_df, color='b')
 
 
 
-![png](blog_project_1_files/blog_project_1_29_1.png)
+![png](/img/blog_project_1_files/blog_project_1_29_1.png)
 
 
 There are a couple interesting relationships to note. First, we see a strong positive correlation between SAT Verbal and Math scores, with one notable outlier (OH). Ohio was the only state to have a mean SAT Math score of less than 450. This trend demonstrates that states with higher Math SAT scores tend to have higher Verbal SAT scores.  Second, we observe a negative correlation between SAT participation rate and SAT Verbal and Math scores.  This seems counterintuitive as we would mostly expect states with higher SAT scores to be more likely to share their scores and, therefore, have higher participations rates.  However, the negative correlation shows states with lower SAT scores are generally more likely to have higher participation rates.  It is possible this is the result of a strategy employed by these states to try to get more education funding by demonstrating their below average SAT scoring. 
 
 
-```python
-
-```
