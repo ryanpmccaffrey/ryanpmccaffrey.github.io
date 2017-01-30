@@ -507,7 +507,7 @@ sat_df
 </table>
 </div>
 
-
+  
 
 
 ```python
@@ -703,5 +703,5 @@ sns.jointplot(x='Verbal', y='Rate', data=sat_df, color='b')
 
 There are a couple interesting relationships to note. First, we see a strong positive correlation between SAT Verbal and Math scores, with one notable outlier (OH). Ohio was the only state to have a mean SAT Math score of less than 450. This trend demonstrates that states with higher Math SAT scores tend to have higher Verbal SAT scores.  Second, we observe a negative correlation between SAT participation rate and SAT Verbal and Math scores.  This seems counterintuitive as we would mostly expect states with higher SAT scores to be more likely to share their scores and, therefore, have higher participations rates.  However, the negative correlation shows states with lower SAT scores are generally more likely to have higher participation rates.  It is possible this is the result of a strategy employed by these states to try to get more education funding by demonstrating their below average SAT scoring. 
 
-<iframe src="https://vida.io/embed/brjuT2DAjmWNpFks8?dashboard=1" width="800" height="825" seamless frameBorder="0" scrolling="no">
+<iframe src="http://embed.vida.io/documents/BZoxsMJfWttyG3tfK" width="800" height="525" seamless frameBorder="0" scrolling="no"></iframe>
 
