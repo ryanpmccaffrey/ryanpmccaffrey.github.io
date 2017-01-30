@@ -5,7 +5,7 @@ title: SAT Scores in the United States
 subtitle: "Category: Data Visualization"
 ---
 
-The purpose of this project is to explore a dataset of SAT scores from across the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  The exploratory analysis and plotting will be done in Python.
+The purpose of this project is to explore a dataset of SAT scores from around the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  This project will culminate in a [D3](https://d3js.org/) visualization of SAT scores mapped across the US.  The exploratory analysis and plotting will be done in Python.
 
 First, we start by loading all the required Python packages and reading in the data as a list.
 
@@ -650,6 +650,7 @@ plt.grid(True)
 
 ![png](/img/blog_project_1_files/blog_project_1_25_0.png)
 
+Though working assumption was that the distributions of the SAT dataset would be normal, this is clearly not the case.  The participation rate and SAT Verbal scores appear to be bimodal distributions and the SAT Math scores distribution appear to be positive skewed (with median < mean).
 
 To better understand the relationships among the data we use the Seaborn package to create pair plots.
 
