@@ -1,7 +1,6 @@
 ---
 layout: post
-image: '/img/billboard.png'
-title: "Billboard: What Makes a Hit Song?"
+title: "Billboard"
 subtitle: "Category: Exploratory Data Analysis"
 ---
 
