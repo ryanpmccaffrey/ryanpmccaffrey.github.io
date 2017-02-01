@@ -6,7 +6,7 @@ subtitle: "Category: Data Visualization"
 ---
 
 
-The purpose of this project is to explore a dataset of SAT scores from around the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  Exploratory analysis and plotting will be performed with Python.  Lastly, this project will culminate in a [D3](https://d3js.org/) visualization of SAT scores (combined) and participation rates mapped across the US.  
+The purpose of this project is to explore a dataset of SAT scores from around the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  Exploratory analysis and plotting will be performed in Python.  Lastly, this project will culminate in a [D3](https://d3js.org/) visualization of SAT scores (combined) and participation rates mapped across the US.  
 
 
 First, we start by loading all the required Python packages and reading in the data as a list.
@@ -635,4 +635,4 @@ There are a couple interesting relationships to note. First, we see a strong pos
 
 Finally, using D3 we visualize the SAT participation rates and combined SAT scores with two Choropleth maps of the US.  These maps are made with Vida and are used to visually demonstrate the geographical trend of higher SAT scores being concentrated toward the center of the US, and higher SAT participation rates being concentrated toward the western and northeastern parts of the US.
 
-<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="900" height="1825" seamless frameBorder="0" scrolling="no"></iframe>
+<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="1000" height="4000" seamless frameBorder="0" scrolling="no"></iframe>
