@@ -1,11 +1,6 @@
----
-layout: post
-image: '/img/sat.jpg'
-title: SAT Scores in the United States
-subtitle: "Category: Data Visualization"
----
 
-The purpose of this project is to explore a dataset of SAT scores from around the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  This project will culminate in a [D3](https://d3js.org/) visualization of SAT scores mapped across the US.  The exploratory analysis and plotting will be done in Python.
+The purpose of this project is to explore a dataset of SAT scores from around the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  Exploratory analysis and plotting will be performed with Python.  Lastly, this project will culminate in a [D3](https://d3js.org/) visualization of SAT scores (combined) and participation rates mapped across the US.  
+
 
 First, we start by loading all the required Python packages and reading in the data as a list.
 
@@ -28,67 +23,7 @@ with open(my_csv_path, 'r') as f:
     reader = csv.reader(f)
     for row in reader:
         sat_list.append(row)
-sat_list
 ```
-
-
-
-
-    [['State', 'Rate', 'Verbal', 'Math'],
-     ['CT', '82', '509', '510'],
-     ['NJ', '81', '499', '513'],
-     ['MA', '79', '511', '515'],
-     ['NY', '77', '495', '505'],
-     ['NH', '72', '520', '516'],
-     ['RI', '71', '501', '499'],
-     ['PA', '71', '500', '499'],
-     ['VT', '69', '511', '506'],
-     ['ME', '69', '506', '500'],
-     ['VA', '68', '510', '501'],
-     ['DE', '67', '501', '499'],
-     ['MD', '65', '508', '510'],
-     ['NC', '65', '493', '499'],
-     ['GA', '63', '491', '489'],
-     ['IN', '60', '499', '501'],
-     ['SC', '57', '486', '488'],
-     ['DC', '56', '482', '474'],
-     ['OR', '55', '526', '526'],
-     ['FL', '54', '498', '499'],
-     ['WA', '53', '527', '527'],
-     ['TX', '53', '493', '499'],
-     ['HI', '52', '485', '515'],
-     ['AK', '51', '514', '510'],
-     ['CA', '51', '498', '517'],
-     ['AZ', '34', '523', '525'],
-     ['NV', '33', '509', '515'],
-     ['CO', '31', '539', '542'],
-     ['OH', '26', '534', '439'],
-     ['MT', '23', '539', '539'],
-     ['WV', '18', '527', '512'],
-     ['ID', '17', '543', '542'],
-     ['TN', '13', '562', '553'],
-     ['NM', '13', '551', '542'],
-     ['IL', '12', '576', '589'],
-     ['KY', '12', '550', '550'],
-     ['WY', '11', '547', '545'],
-     ['MI', '11', '561', '572'],
-     ['MN', '9', '580', '589'],
-     ['KS', '9', '577', '580'],
-     ['AL', '9', '559', '554'],
-     ['NE', '8', '562', '568'],
-     ['OK', '8', '567', '561'],
-     ['MO', '8', '577', '577'],
-     ['LA', '7', '564', '562'],
-     ['WI', '6', '584', '596'],
-     ['AR', '6', '562', '550'],
-     ['UT', '5', '575', '570'],
-     ['IA', '5', '593', '603'],
-     ['SD', '4', '577', '582'],
-     ['ND', '4', '592', '599'],
-     ['MS', '4', '566', '551'],
-     ['All', '45', '506', '514']]
-
-
 
 Next, we do a sanity check to make sure all states are accounted for.  The total number of rows should be 53 (50 states + 1 DC + 1 All + 1 column header).  
 
@@ -104,9 +39,9 @@ len(sat_list)
 
 
 
-Although each state has mean verbal and math SAT scores posted, many of the states have low participation rates.  This could lead to the data being skewed or biased. With 20 states having participating rates of 20% or less, the data set would be more accurate and reliable if more states had higher participation rates. The values of the SAT scores all seem reasonable (i.e., no entries with 0 or N/A).
+Although each state has posted mean Verbal and Math SAT scores, many of the states have low participation rates.  This finding is probably the result of the ACT test (a competitor to the SAT test) being popular among the southern and midwestern states.  In states where the ACT test dominates in popularity, the SAT scores may be biased or skewed toward the higher end due to the fact that students who take both exams tend to be more competitive and/or higher achieving students. With 20 states having participation rates of 20% or less, the data set would offer a fairer comparison if these states had higher participation rates. Lastly, the values of the SAT scores all seem reasonable (i.e., no entries with 0 or N/A).
 
-Next, we remove column header and create a key-value pair dictionary for any future exploratory data analysis we may want to perform.  For our dictionary we will use the state abbreviation as the key.  The values of the dictionary will be a list containing participation rate, verbal score, and math score.  We use a dictionary comprehension to create the dictionary. 
+Next, we remove the column header and create a key-value pair dictionary in case we ever want to perform further exploratory data analysis in the future.  For our dictionary we will use the state abbreviation as the key.  The values of the dictionary will be a list containing participation rate, verbal score, and math score.  We use a dictionary comprehension to create the dictionary. 
 
 
 ```python
@@ -507,7 +442,9 @@ sat_df
 </table>
 </div>
 
- Let's check the datatypes of each column. 
+
+
+Let's check the datatypes of each column.
 
 
 ```python
@@ -528,7 +465,7 @@ sat_df['Verbal'] = sat_df['Verbal'].astype(int)
 sat_df['Math'] = sat_df['Math'].astype(int)
 ```
 
-Next, we create three different dictionaries with 'State' as the key. The values of each dictionary are 'Rate', 'Verbal' and 'Math'.  These dictionaries are created for any future exploratory data analysis we may want to perform.
+Now we create three distinct dictionaries each with 'State' as the key. The values of each dictionary are 'Rate', 'Verbal' and 'Math'.  We create these dictionaries to make it easy to perform further exploratory analysis in the future, if needed.
 
 
 ```python
@@ -557,7 +494,7 @@ print dict_state_math
     {'WA': 527, 'DE': 499, 'DC': 474, 'WI': 596, 'WV': 512, 'HI': 515, 'FL': 499, 'WY': 545, 'NH': 516, 'NJ': 513, 'NM': 542, 'TX': 499, 'LA': 562, 'NC': 499, 'ND': 599, 'NE': 568, 'TN': 553, 'NY': 505, 'PA': 499, 'RI': 499, 'NV': 515, 'VA': 501, 'CO': 542, 'AK': 510, 'AL': 554, 'AR': 550, 'VT': 506, 'IL': 589, 'GA': 489, 'IN': 501, 'IA': 603, 'OK': 561, 'AZ': 525, 'CA': 517, 'ID': 542, 'CT': 510, 'ME': 500, 'MD': 510, 'All': 514, 'MA': 515, 'OH': 439, 'UT': 570, 'MO': 577, 'MN': 589, 'MI': 572, 'KS': 580, 'MT': 539, 'MS': 551, 'SC': 488, 'KY': 550, 'OR': 526, 'SD': 582}
 
 
-We compute some basic descriptive statistics using NumPy.
+Now we compute some basic descriptive statistics using NumPy.
 
 
 ```python
@@ -617,10 +554,11 @@ plt.ylabel('Number of States')
 plt.title(r'SAT Score Reporting, 2001')
 plt.axis([0, 90, 0, 18])
 plt.grid(True)
+plt.show()
 ```
 
 
-![png](/img/blog_project_1_files/blog_project_1_23_0.png)
+![png](blog_project_1_files/blog_project_1_24_0.png)
 
 
 
@@ -629,12 +567,12 @@ plt.hist(sat_df['Math'],12)
 plt.xlabel('Average Math Score')
 plt.ylabel('Number of States')
 plt.title(r'United States SAT Scores, 2001')
-#plt.axis([400, 650, 0, 12])
 plt.grid(True)
+plt.show()
 ```
 
 
-![png](/img/blog_project_1_files/blog_project_1_24_0.png)
+![png](blog_project_1_files/blog_project_1_25_0.png)
 
 
 
@@ -643,66 +581,51 @@ plt.hist(sat_df['Verbal'],12)
 plt.xlabel('Average Verbal Score')
 plt.ylabel('Number of States')
 plt.title(r'United States SAT Scores, 2001')
-#plt.axis([450, 650, 0, 12])
+plt.axis([470, 600, 0, 10])
 plt.grid(True)
+plt.show()
 ```
 
 
-![png](/img/blog_project_1_files/blog_project_1_25_0.png)
+![png](blog_project_1_files/blog_project_1_26_0.png)
 
-Though working assumption was that the distributions of the SAT dataset would be normal, this is clearly not the case.  The participation rate and SAT Verbal scores appear to be bimodal distributions and the SAT Math scores distribution appear to be positive skewed (with median < mean).
+
+Though working assumption was that the distributions of the SAT dataset would be normal, this is clearly not the case. The participation rate and SAT Verbal scores appear to be bimodal distributions and the SAT Math scores distribution appear to be positive skewed (with median < mean).
 
 To better understand the relationships among the data we use the Seaborn package to create pair plots.
 
 
 ```python
 sns.pairplot(sat_df)
+plt.show()
 ```
 
 
-
-
-    <seaborn.axisgrid.PairGrid at 0x117e49790>
-
-
-
-
-![png](/img/blog_project_1_files/blog_project_1_27_1.png)
+![png](blog_project_1_files/blog_project_1_29_0.png)
 
 
 
 ```python
 sns.jointplot(x='Math', y='Verbal', data=sat_df, color='b')
+plt.show()
 ```
 
 
-
-
-    <seaborn.axisgrid.JointGrid at 0x11a8cc510>
-
-
-
-
-![png](/img/blog_project_1_files/blog_project_1_28_1.png)
+![png](blog_project_1_files/blog_project_1_30_0.png)
 
 
 
 ```python
 sns.jointplot(x='Verbal', y='Rate', data=sat_df, color='b')
+plt.show()
 ```
 
 
+![png](blog_project_1_files/blog_project_1_31_0.png)
 
 
-    <seaborn.axisgrid.JointGrid at 0x11ae5cbd0>
+There are a couple interesting relationships to note. First, we see a strong positive correlation between SAT Verbal and Math scores, with one notable outlier (OH). Ohio was the only state to have a mean SAT Math score of less than 450. This trend demonstrates that states with higher Math SAT scores tend to have higher Verbal SAT scores.  Second, we observe a negative correlation between SAT participation rate and SAT Verbal/Math scores.  This seems to in agreement with our hypothesis that low-performing students in ACT test dominated states will generally tend to forgo taking the SAT test. This leaves only the strongest performing students in these states to take both the ACT and SAT exams, thus skewing the SAT score distribution.  As a result, we find that higher participation rates correspond to lower SAT Verbal/Math scores, and vice versa.
 
+Finally, using D3 we visualize the SAT participation rates and combined SAT scores with two Choropleth maps of the US.  These maps are made with Vida and are used to visually demonstrate the geographical trend of higher SAT scores being concentrated toward the center of the US, and higher SAT participation rates being concentrated toward the western and northeastern parts of the US.
 
-
-
-![png](/img/blog_project_1_files/blog_project_1_29_1.png)
-
-
-There are a couple interesting relationships to note. First, we see a strong positive correlation between SAT Verbal and Math scores, with one notable outlier (OH). Ohio was the only state to have a mean SAT Math score of less than 450. This trend demonstrates that states with higher Math SAT scores tend to have higher Verbal SAT scores.  Second, we observe a negative correlation between SAT participation rate and SAT Verbal and Math scores.  This seems counterintuitive as we would mostly expect states with higher SAT scores to be more likely to share their scores and, therefore, have higher participations rates.  However, the negative correlation shows states with lower SAT scores are generally more likely to have higher participation rates.  It is possible this is the result of a strategy employed by these states to try to get more education funding by demonstrating their below average SAT scoring. 
-
-<iframe src="https://vida.io/embed/9x5J43NPekQMKCsQT?dashboard=1" width="800" height="825" seamless frameBorder="0" scrolling="no"></iframe>
-
+<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="800" height="825" seamless frameBorder="0" scrolling="no"></iframe>
