@@ -1,3 +1,10 @@
+---
+layout: post
+image: '/img/sat.jpg'
+title: SAT Scores in the United States
+subtitle: "Category: Data Visualization"
+---
+
 
 The purpose of this project is to explore a dataset of SAT scores from around the country and explore ways to effectively visualize the data.  This data, taken from the College Board, gives the mean SAT math and verbal scores, and the participation rate for each state and the District of Columbia for the year 2001.  Exploratory analysis and plotting will be performed with Python.  Lastly, this project will culminate in a [D3](https://d3js.org/) visualization of SAT scores (combined) and participation rates mapped across the US.  
 
@@ -558,7 +565,7 @@ plt.show()
 ```
 
 
-![png](blog_project_1_files/blog_project_1_24_0.png)
+![png](/img/blog_project_1_files/blog_project_1_24_0.png)
 
 
 
@@ -572,7 +579,7 @@ plt.show()
 ```
 
 
-![png](blog_project_1_files/blog_project_1_25_0.png)
+![png](/img/blog_project_1_files/blog_project_1_25_0.png)
 
 
 
@@ -587,7 +594,7 @@ plt.show()
 ```
 
 
-![png](blog_project_1_files/blog_project_1_26_0.png)
+![png](/img/blog_project_1_files/blog_project_1_26_0.png)
 
 
 Though working assumption was that the distributions of the SAT dataset would be normal, this is clearly not the case. The participation rate and SAT Verbal scores appear to be bimodal distributions and the SAT Math scores distribution appear to be positive skewed (with median < mean).
@@ -601,7 +608,7 @@ plt.show()
 ```
 
 
-![png](blog_project_1_files/blog_project_1_29_0.png)
+![png](/img/blog_project_1_files/blog_project_1_29_0.png)
 
 
 
@@ -611,7 +618,7 @@ plt.show()
 ```
 
 
-![png](blog_project_1_files/blog_project_1_30_0.png)
+![png](/img/blog_project_1_files/blog_project_1_30_0.png)
 
 
 
@@ -621,11 +628,11 @@ plt.show()
 ```
 
 
-![png](blog_project_1_files/blog_project_1_31_0.png)
+![png](/img/blog_project_1_files/blog_project_1_31_0.png)
 
 
 There are a couple interesting relationships to note. First, we see a strong positive correlation between SAT Verbal and Math scores, with one notable outlier (OH). Ohio was the only state to have a mean SAT Math score of less than 450. This trend demonstrates that states with higher Math SAT scores tend to have higher Verbal SAT scores.  Second, we observe a negative correlation between SAT participation rate and SAT Verbal/Math scores.  This seems to in agreement with our hypothesis that low-performing students in ACT test dominated states will generally tend to forgo taking the SAT test. This leaves only the strongest performing students in these states to take both the ACT and SAT exams, thus skewing the SAT score distribution.  As a result, we find that higher participation rates correspond to lower SAT Verbal/Math scores, and vice versa.
 
 Finally, using D3 we visualize the SAT participation rates and combined SAT scores with two Choropleth maps of the US.  These maps are made with Vida and are used to visually demonstrate the geographical trend of higher SAT scores being concentrated toward the center of the US, and higher SAT participation rates being concentrated toward the western and northeastern parts of the US.
 
-<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="800" height="825" seamless frameBorder="0" scrolling="no"></iframe>
+<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="900" height="1825" seamless frameBorder="0" scrolling="no"></iframe>
