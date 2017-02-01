@@ -635,4 +635,4 @@ There are a couple interesting relationships to note. First, we see a strong pos
 
 Finally, using D3 we visualize the SAT participation rates and combined SAT scores with two Choropleth maps of the US.  These maps are made with Vida and are used to visually demonstrate the geographical trend of higher SAT scores being concentrated toward the center of the US, and higher SAT participation rates being concentrated toward the western and northeastern parts of the US.
 
-<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="1000" height="3700" seamless frameBorder="0" scrolling="no"></iframe>
+<iframe src="https://vida.io/embed/rwhNanL8qXKHbfzb4?dashboard=1" width="1000" height="3600" seamless frameBorder="0" scrolling="no"></iframe>
