@@ -9,6 +9,8 @@ subtitle: "Category: Exploratory Data Analysis"
 The Billboard Hot 100 is a weekly music chart used to rank songs based on various factors such as sales, online streaming and radio play.  It is largely regarded as the gold standard of music and record rankings.  The objective of this project is to explore a Billboard dataset from the year 2000 and try to determine what makes a song great and what keeps it on the charts.  We will start by coming up with some ideas, relevant questions, and hypotheses that we'd like explore in the data. After that we'll start working with the data, first by cleaning it up and then by doing some exploratory analysis.  We will end by evaluating our hypotheses to determine whether or not the trends or effects we hypothesized are actually real (and statistically significant).
 
 This project will be organized around the following sections:
+
+
 * Hypothesis brainstorming
 * Cleaning the data 
 * Exploratory analysis
