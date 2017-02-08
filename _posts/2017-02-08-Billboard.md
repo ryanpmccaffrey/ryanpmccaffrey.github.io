@@ -17,6 +17,8 @@ This project will be organized around the following sections:
 * Hypothesis testing 
 
 Before moving onto the hypothesis brainstorming let's list here the key assumptions we are making with the data:
+
+
 1. We will assume that the data is accurate and that both the numeric and categorical variables are correctly assigned (e.g., we will not check individual records to ensure they are properly categorized with respect to 'genre', 'time' or any other variables).
 2. We will use a significance level of 0.05 to test our null hypothesis.
 
