@@ -27,6 +27,8 @@ Before moving onto the hypothesis brainstorming let's list here the key assumpti
 Before we dive deep into the data I think it's important to first come up with ideas about what factors we believe could influence the success of a song on the Billboard Hot 100 list.  We will be judging success both on number of weeks a song stays in the top 100 as well as the average ranking of that song over that time.
 
 Here are some questions we would like to explore in the data:
+
+
 - Does genre popularity ultimately influence or limit the longevity of a song on the charts?
 - Are shorter songs more popular (easier to repeat)?
 - Do songs that peak early tend to fade away more quickly?
@@ -1925,7 +1927,7 @@ stats.ttest_ind(holiday_peak,other_peak)
 
 Based on the high p-values, we do not reject the null hypothesis for all hypothesis tests related to these winter seasonality observations.  We originally thought a brief surge in Christmas song popularity during the winter months could affect the average ranking and average number of weeks songs sustained on the chart.  The t-test results proved otherwise. Not only does this tell us that the jump in songs peaking in December and January had no statistically significant effect on average ranking or number of weeks songs stayed on the chart, but it tells us that the actual jump in songs peaking during those months was in itself not statistically significant compared to the other months.
 
-In the beginning of this project we hypothesized that, perhaps, the length of a song may influence its average rank. The thinking was that shorter songs were more amenable to radio play and online streaming, which are believed to be key components to the Billboard Hot 100 ranking formula.  However, when we plot average ranking as a function of song length during the exploratory analysis section, it became obvious that a strong correlation was not present.  We will confirm this observation with a t-test calculation.  The null hypothesis is that the length of a song has no impact on its average ranking.  "Short songs" are defined to be songs that last 210sec or less, whereas "long songs" are considered to be 211sec or more. The somewhat arbitrary threshold for short/long songs was determined by doing some quick online research that 3:30 is the normal length of a typical song.
+In the beginning of this project we hypothesized that, perhaps, the length of a song may influence its average rank. The thinking was that shorter songs were more amenable to radio play and online streaming, which are believed to be key components to the Billboard Hot 100 ranking formula.  However, when we plot average ranking as a function of song length during the exploratory analysis section, it became obvious that a strong correlation was not present.  We will confirm this observation with a t-test calculation.  The null hypothesis is that the length of a song has no impact on its average ranking.  "Short songs" are defined to be songs that last 210sec or less, whereas "long songs" are considered to be 211sec or more. The somewhat arbitrary threshold for short/long songs was determined by doing some quick online research that indicated 3:30 was the normal length of a typical song.
 
 
 ```python
