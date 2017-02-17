@@ -23,6 +23,8 @@ Here are our assumptions about the data:
 
 - We assume all values in the dataset are correctly categorized and assigned
 
+
+
 ## Exploratory analysis
 
 Let's start by reading in the data and plotting a histogram of home sale prices ('SalePrice'), which is the target variable we will be trying to predict.
@@ -251,7 +253,7 @@ This transformation creates a much more normally distributed histogram, which wi
 
 Now let's plot the number of houses sold by neighborhood in Ames, Iowa, and see how they stack up.  We can use [this](https://ww2.amstat.org/publications/jse/v19n3/decock/AmesResidential.pdf) Ames residential neighborhood map to try to identify patterns in the location data.
 
-![png](/img/ames_neighborhoods.png)
+![png](/img/Project-3_files/ames_neighborhoods.png)
 
 
 ```python
@@ -454,6 +456,8 @@ sns.heatmap(corr, mask=mask, cmap=cmap, vmax=.2,
 
 
 By looking at the bottom row of the correlation triangle we identify that the highest correlations with 'SalePrice' seem to be 'OverallQual' and 'GrLivArea'.
+
+
 
 ## Linear regression modeling
 
