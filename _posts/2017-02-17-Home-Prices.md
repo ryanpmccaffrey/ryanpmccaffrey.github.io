@@ -467,7 +467,7 @@ This Kaggle competition uses the root-mean-squared-error metric to evaluate mode
 
 We will use the RMSE metric to optimize and tune our model. But because the goal of this project isn't necessarily to submit to Kaggle, we will opt to use $R^{2}$ values (percentage of variance explained) to compare predictions among our models to determine which one performs best.
 
-We will focus on the Lasso (L1 norm) and Ridge (L2 norm) regularization methods as they help promote simple models by penalizing complexity (as measured by the $\beta$ magnitudes).  First, however, we will apply linear regression without any regularization in order to establish a baseline for comparison.
+We will focus on the Lasso (L1 norm) and Ridge (L2 norm) regularization methods as they help promote simple models by penalizing complexity (as measured by the &beta magnitudes).  First, however, we will apply linear regression without any regularization in order to establish a baseline for comparison.
 
 
 ```python
@@ -672,7 +672,7 @@ ax.set_title('Ridge Model', fontsize=16);
 ![png](/img/Project-3_files/Project-3_52_0.png)
 
 
-Here $\alpha$ is the tuning parameter that controls the strength of the regularization.  Higher $\alpha$ values will contrain more the $\beta$ coefficients of the linear model.  When $\alpha$ is zero we get back a non-regularized linear model. If we take a look at the above plot first we see the error improve as $\alpha$ increases, then it hits a minimum and then it starts to increase.  This is an example of the bias-variance tradeoff.  At first, the low $\alpha$ values show that the model is overfit with a high variance (i.e., our model is too tightly fit and is starting to pick up the noise in the data, which leads to a lot of variance).  As $\alpha$ reaches the higher end we find that the model is underfit (i.e., our model is too simplified for the data and we are therefore biasing our predictions to be poorly representative of the shape or complexity of the data). The higher the $\alpha$ value the less prone our model will be to overfitting.  Here we find that the RMSE reaches a minimum at $\alpha$ = 2 on our RidgeCV regularization model, which represents the minimum sum of the bias and variance errors.
+Here &alpha is the tuning parameter that controls the strength of the regularization.  Higher &alpha values will contrain more the &beta coefficients of the linear model.  When &alpha is zero we get back a non-regularized linear model. If we take a look at the above plot first we see the error improve as &alpha increases, then it hits a minimum and then it starts to increase.  This is an example of the bias-variance tradeoff.  At first, the low &alpha values show that the model is overfit with a high variance (i.e., our model is too tightly fit and is starting to pick up the noise in the data, which leads to a lot of variance).  As &alpha reaches the higher end we find that the model is underfit (i.e., our model is too simplified for the data and we are therefore biasing our predictions to be poorly representative of the shape or complexity of the data). The higher the &alpha value the less prone our model will be to overfitting.  Here we find that the RMSE reaches a minimum at &alpha = 2 on our RidgeCV regularization model, which represents the minimum sum of the bias and variance errors.
 
 
 ```python
@@ -690,7 +690,7 @@ plt.title("Coefficients in the RidgeCV Model");
 ![png](/img/Project-3_files/Project-3_55_0.png)
 
 
-Although its difficult to interpret exactly how important each feature is since we have already transformed several numeric variables, if we look at the magnitude of the $\beta$ coefficients of each feature we can try to get a general sense of their relative importance.  Here we see that by far the most important feature is 'GrLivArea' or the above grade (ground) living area square footage. This makes sense since the size of a house is typically a major indicator of its value.  We also observed earlier that 'GrLivArea' had one of the highest correlations with 'SalePrice'.  Other significant features include the dummified neighborhood variables (location, location, location!) as well as whether or not the house has wooden shingles.
+Although its difficult to interpret exactly how important each feature is since we have already transformed several numeric variables, if we look at the magnitude of the &beta coefficients of each feature we can try to get a general sense of their relative importance.  Here we see that by far the most important feature is 'GrLivArea' or the above grade (ground) living area square footage. This makes sense since the size of a house is typically a major indicator of its value.  We also observed earlier that 'GrLivArea' had one of the highest correlations with 'SalePrice'.  Other significant features include the dummified neighborhood variables (location, location, location!) as well as whether or not the house has wooden shingles.
 
 Now let's try Lasso regression with 5-fold cross validation to see how it compares.
 
@@ -849,7 +849,7 @@ ax.set_title('Lasso Model');
 ![png](/img/Project-3_files/Project-3_65_0.png)
 
 
-The above plot shows the RMSE is minimized in the LassoCV model with an $\alpha$ of 0.0005.  After that as $\alpha$ increases the model starts to have too much bias (the $\beta$ coefficients are too constrained).
+The above plot shows the RMSE is minimized in the LassoCV model with an &alpha of 0.0005.  After that as &alpha increases the model starts to have too much bias (the &beta coefficients are too constrained).
 
 
 ```python
@@ -886,9 +886,9 @@ plt.title("Coefficients in the Lasso Model");
 ![png](/img/Project-3_files/Project-3_70_0.png)
 
 
-The biggest finding we make here is that the Lasso model drops 20 different $\beta$ coefficients to zero, which effectively reduces the number of feature inputs to 40.  We observe similar traits in the Lasso coefficients as we did with the Ridge coefficients.  'GrLivArea' seems to dominate in terms of feature importance.  To a lesser extent the dummified neighborhood features as well as 'LotArea' seem to play important roles in the model.
+The biggest finding we make here is that the Lasso model drops 20 different &beta coefficients to zero, which effectively reduces the number of feature inputs to 40.  We observe similar traits in the Lasso coefficients as we did with the Ridge coefficients.  'GrLivArea' seems to dominate in terms of feature importance.  To a lesser extent the dummified neighborhood features as well as 'LotArea' seem to play important roles in the model.
 
-Based on an evaluation of our RMSE values it looks like the RidgeCV model with $\alpha$ = 2 gives the lowest error. Now that we have our three regression models (i.e., linear, RidgeCV, LassoCV) let's compare the results of our cross validation predictions with the $R^{2}$ metric.
+Based on an evaluation of our RMSE values it looks like the RidgeCV model with &alpha = 2 gives the lowest error. Now that we have our three regression models (i.e., linear, RidgeCV, LassoCV) let's compare the results of our cross validation predictions with the $R^{2}$ metric.
 
 
 ```python
@@ -1006,6 +1006,6 @@ axes[2].set_ylim([-1.5,2]);
 ![png](/img/Project-3_files/Project-3_78_0.png)
 
 
-Here we find that the RidgeCV model performs slightly better than the LassoCV model based on a comparison of $R^{2}$ values, or the percentage of variance explained.  The RidgeCV model has an $R^{2}$ of 0.8749 whereas the LassoCV model has an $R^{2}$ of 0.8695.  Visually, the two models appear to be very similar on the *Actual vs. Predicted* and *Residuals* plots.  The only difference seems to be a couple outliers. Both the RidgeCV and LassoCV models showed better $R^{2}$ scores than the linear regression model, which means that the linear model was overfit and by adding some regularization we were able to constrain the $\beta$ coefficients and reduce the variance (essentially "relaxing" the model slightly). To improve on the model further, in the future we could average several RidgeCV models or use ensembling techniques to combine the LassoCV and RidgeCV models in an effort to reduce the variance in the model even more.
+Here we find that the RidgeCV model performs slightly better than the LassoCV model based on a comparison of $R^{2}$ values, or the percentage of variance explained.  The RidgeCV model has an $R^{2}$ of 0.8749 whereas the LassoCV model has an $R^{2}$ of 0.8695.  Visually, the two models appear to be very similar on the *Actual vs. Predicted* and *Residuals* plots.  The only difference seems to be a couple outliers. Both the RidgeCV and LassoCV models showed better $R^{2}$ scores than the linear regression model, which means that the linear model was overfit and by adding some regularization we were able to constrain the &beta coefficients and reduce the variance (essentially "relaxing" the model slightly). To improve on the model further, in the future we could average several RidgeCV models or use ensembling techniques to combine the LassoCV and RidgeCV models in an effort to reduce the variance in the model even more.
 
-In summary, we found that number of overall home sales peaked in Ames in 2009, whereas number of expensive home sales peaked in 2007.  A dramatic reduction in number of homes sold was observed in 2010.  The top districts in Ames for both number of expensive and overall home sales seem to be concentrated in the northern and western parts of the city. Using linear, Lasso and Ridge regressions we predicted home sales prices in Ames. A comparison of $R^{2}$ values demonstrated that the Ridge linear regression model was the best performer, and both the Lasso and Ridge models outperformed the linear regression model.  This proved that the original linear regression model was overfit and by constraining the $\beta$ coefficients we were able to reduce the variance of the model.
+In summary, we found that number of overall home sales peaked in Ames in 2009, whereas number of expensive home sales peaked in 2007.  A dramatic reduction in number of homes sold was observed in 2010.  The top districts in Ames for both number of expensive and overall home sales seem to be concentrated in the northern and western parts of the city. Using linear, Lasso and Ridge regressions we predicted home sales prices in Ames. A comparison of $R^{2}$ values demonstrated that the Ridge linear regression model was the best performer, and both the Lasso and Ridge models outperformed the linear regression model.  This proved that the original linear regression model was overfit and by constraining the &beta coefficients we were able to reduce the variance of the model.
