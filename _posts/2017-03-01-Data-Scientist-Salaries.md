@@ -1,6 +1,6 @@
 ---
 layout: post
-image: ''
+image: '/img/indeed.png'
 title: "Predicting Data Scientist Salary Ranges"
 subtitle: "Category: Webscraping + Logistic Regression"
 ---
