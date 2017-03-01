@@ -6,7 +6,7 @@ subtitle: "Category: Webscraping + Logistic Regression"
 ---
 
 
-In this project we will webscrape indeed.com for data scientist job postings.  We will collect salary information, job summary, keywords, company name, location, number of reviews, etc.  Then using a logistic regression classification model we will predict whether or not the job is a high or low paying job.  While more precision might be better, there is a fair amount of natural variance in job salaries, which precludes us from applying regression techniques to predict individual salaries; however, using a binary predictor (e.g. high or low) may still be useful. The first part of assignment will focus on scraping data, and the second will focus on using the listings with salary information to build a model and predict high/low salaries.   
+In this project we will webscrape indeed.com for data scientist job postings.  We will collect salary information, job summary, keywords, company name, location, number of reviews, etc.  Then using a logistic regression classification model we will predict whether or not the job is a high or low paying job.  While more precision might be better, there is a fair amount of natural variance in job salaries, which precludes us from applying regression techniques to predict individual salaries; however, using a binary predictor (e.g. high or low) may still be useful. The first part of the project will focus on scraping data, and the second will focus on using the listings with salary information to build a model to predict high/low salaries.   
 
 We will collect salary information on data science jobs across the following 14 major US cities: *New York, Chicago, San Francisco, Austin, Atlanta, Boston, Washington, Seattle, Philadelphia, Los Angeles, Denver, San Diego, San Jose and Dallas.*  We would also like to understand which factors most directly impact salaries (e.g., location, summary keywords, etc.).  
 
@@ -67,20 +67,6 @@ for city in set(['New+York', 'Chicago', 'San+Francisco', 'Austin', 'Atlanta', 'B
 df = pd.DataFrame(results,columns=['results','city'])
 ```
 
-    Completed:  New+York
-    Completed:  Chicago
-    Completed:  San+Francisco
-    Completed:  Boston
-    Completed:  Dallas
-    Completed:  Washington
-    Completed:  Philadelphia
-    Completed:  Denver
-    Completed:  Los+Angeles
-    Completed:  San+Jose
-    Completed:  San+Diego
-    Completed:  Atlanta
-    Completed:  Seattle
-    Completed:  Austin
 
 
 
