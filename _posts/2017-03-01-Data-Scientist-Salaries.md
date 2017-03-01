@@ -10,7 +10,7 @@ In this project we will webscrape indeed.com for data scientist job postings.  W
 
 We will collect salary information on data science jobs across the following 14 major US cities: *New York, Chicago, San Francisco, Austin, Atlanta, Boston, Washington, Seattle, Philadelphia, Los Angeles, Denver, San Diego, San Jose and Dallas.*  We would also like to understand which factors most directly impact salaries (e.g., location, summary keywords, etc.).  
 
-This project will be focused around the following sections:
+This project will be focused around the following sections and is intended for a technical audience:
 
 
 - Webscraping
@@ -179,9 +179,6 @@ df['reviews'] = df['results'].apply(get_review)
 df['job_link'] = df['results'].apply(get_job_link)
 ```
 
-    /Applications/anaconda/lib/python2.7/site-packages/numpy/core/_methods.py:59: RuntimeWarning: Mean of empty slice.
-      warnings.warn("Mean of empty slice.", RuntimeWarning)
-
 
 
 ```python
@@ -315,38 +312,6 @@ for i in range(len(df_uniq['job_link'].tolist())):
     soup = BeautifulSoup(r.content.decode('utf-8'), "lxml")
     summary.append(soup.text)
 ```
-
-    172
-    173
-    174
-    175
-    176
-    177
-    178
-    179
-    180
-    181
-    182
-    183
-    184
-    185
-    186
-    187
-    188
-    189
-    190
-    191
-    192
-    193
-    194
-    195
-    196
-    197
-    198
-    199
-    200
-    201
-    202
 
 
 
@@ -494,95 +459,6 @@ def get_nn(summary):
 ```python
 df_summary['nn'] = df_summary['summary'].apply(get_nn)
 ```
-
-
-```python
-df_summary.head()
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>summary</th>
-      <th>junior</th>
-      <th>senior</th>
-      <th>python</th>
-      <th>excel</th>
-      <th>big_data</th>
-      <th>phd</th>
-      <th>ml</th>
-      <th>nn</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>\n\n\n\n\njob (new york): data analyst  city r...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>\ndata architect/ data engineer job - envisage...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>\n\nkennedy unlimited staffing, management job...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>\n\nwindow.nreum||(nreum={});nreum.info = {"be...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>\n\nwindow.nreum||(nreum={});nreum.info={"beac...</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
@@ -812,39 +688,6 @@ ax.set_title('Histogram of Data Scientist Salaries in US');
 
 
 
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:4: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:5: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:6: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:7: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:8: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:9: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:10: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:11: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame
-    
-    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-
 
 
 ```python
@@ -864,11 +707,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.cross_validation import cross_val_score
 from sklearn.grid_search import GridSearchCV
 ```
-
-    /Applications/anaconda/lib/python2.7/site-packages/sklearn/cross_validation.py:44: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-      "This module will be removed in 0.20.", DeprecationWarning)
-    /Applications/anaconda/lib/python2.7/site-packages/sklearn/grid_search.py:43: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
-      DeprecationWarning)
 
 
 
@@ -946,7 +784,6 @@ feature_rank.columns = ['feature','coef']
 feature_rank.sort('coef',ascending=False)
 ```
 
-    /Applications/anaconda/lib/python2.7/site-packages/ipykernel/__main__.py:5: FutureWarning: sort(columns=....) is deprecated, use sort_values(by=.....)
 
 
 
@@ -1124,5 +961,7 @@ plt.show()
 
 ## Conclusion
 
-We successfully scraped over 62,000 data science job postings across 14 major cities in the US from indeed.com.  When we filtered out the postings that did not contain salary information and removed duplicate rows we were left with roughly 203 salary observations.  For each job posting we were able to webscrape full job summaries and parse the text to measure word counts of many popular data science keywords.  With our array of features (including location, company name, number of reviews, keyword frequencies, etc.) we fit a logistic regression model to predict whether the job paid a high or low salary.  After optimizing the logistic regression model using GridSearchCV we achieved an accuracy of 0.76.  The high variance in the salary data made it difficult to achieve high accuracy scores.  The low number of unique job postings with salaries (203) compared to the number of features (23) forced us to impose a high regularization strength on the logistic regression model to constrain the beta coefficients.  We found that the l1 penalty eliminated all but four features and the most important feature was big data related keywords.  We acknowledge that some of our assumptions about the data are likely incorrect due to the low number of salary datapoints we acquired.  For example, salary data for some cities may not be representative of the real salary distribution of that city and may be skewed based on small sample sizes or having few employers post many jobs with similar salaries in that city. Future work could include adding to this dataset with supplemental job postings from other career websites such as Glassdoor.com.  By increasing the number of datapoints we expect the variance to go down as currently several job markets feature very high variances that we do not believe is representative of the real salary distribution.
+We successfully scraped over 62,000 data science job postings across 14 major cities in the US from indeed.com.  When we filtered out the postings that did not contain salary information and removed duplicate rows we were left with roughly 203 salary observations.  For each job posting we were able to webscrape full job summaries and parse the text to measure word counts of many popular data science keywords.  With our array of features (including location, company name, number of reviews, keyword frequencies, etc.) we fit a logistic regression model to predict whether the job paid a high or low salary.  After optimizing the logistic regression model using GridSearchCV we achieved an accuracy of 0.76.  The high variance in the salary data made it difficult to achieve high accuracy scores.  
+
+The low number of unique job postings with salaries (203) compared to the number of features (23) forced us to impose a high regularization strength on the logistic regression model to constrain the beta coefficients.  We found that the l1 penalty eliminated all but four features and the most important feature was big data related keywords.  We acknowledge that some of our assumptions about the data are likely incorrect due to the low number of salary datapoints we acquired.  For example, salary data for some cities may not be representative of the real salary distribution of that city and may be skewed based on small sample sizes or having few employers post many jobs with similar salaries in that city. Future work could include adding to this dataset with supplemental job postings from other career websites such as Glassdoor.com.  By increasing the number of datapoints we expect the variance to go down as currently several job markets feature very high variances that we do not believe is representative of the real salary distribution.
 
