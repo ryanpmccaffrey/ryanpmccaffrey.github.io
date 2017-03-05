@@ -1,6 +1,6 @@
-.highlight pre { background-color: #272822; }
+.highlight pre { background-color: #fff; } /*272822*/
 .highlight .hll { background-color: #272822; }
-.highlight .c { color: #75715e } /* Comment */
+.highlight .c { color: #9e9a84 } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #66d9ef } /* Keyword */
 .highlight .l { color: #ae81ff } /* Literal */
@@ -21,7 +21,7 @@
 .highlight .kt { color: #66d9ef } /* Keyword.Type */
 .highlight .ld { color: #e6db74 } /* Literal.Date */
 .highlight .m { color: #ae81ff } /* Literal.Number */
-.highlight .s { color: #f92672 } /* Literal.String */
+.highlight .s { color: #36f13f } /* Literal.String */
 .highlight .na { color: #a6e22e } /* Name.Attribute */
 .highlight .nb { color: #f8f8f2 } /* Name.Builtin */
 .highlight .nc { color: #a6e22e } /* Name.Class */
