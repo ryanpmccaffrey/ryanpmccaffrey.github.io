@@ -191,7 +191,10 @@ df.head()
 </table>
 </div>
 
-
+{% highlight ruby %}
+nans = pd.isnull(df).sum()
+nans[nans>0]
+{% endhighlight %}
 
 
 ```python
