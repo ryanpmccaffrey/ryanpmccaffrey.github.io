@@ -1,6 +1,6 @@
 ---
 layout: post
-image: '/img/imbd.png'
+image: '/img/imdb.png'
 title: "Predicting Highly Rated Movies"
 subtitle: "Category: APIs + Gradient Boosting"
 ---
