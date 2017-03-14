@@ -2,7 +2,7 @@
 layout: post
 image: '/img/imdb.png'
 title: "Predicting Highly Rated Movies"
-subtitle: "Category: APIs + Gradient Boosting"
+subtitle: "Category: APIs + Random Forest"
 ---
 
 
