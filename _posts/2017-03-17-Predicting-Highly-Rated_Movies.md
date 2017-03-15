@@ -1,8 +1,8 @@
 ---
 layout: post
 image: '/img/imdb.png'
-title: "Predicting Highly Rated Movies"
-subtitle: "Category: APIs + Random Forest"
+title: "Predicting Top 250 Rated Movies"
+subtitle: "Category: APIs + PCA + Random Forest"
 ---
 
 
