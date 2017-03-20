@@ -14,7 +14,8 @@ This project will be focused around the following sections and is intended for a
 
 
 - Webscraping
-- Logistic Regression
+- Logistic regression
+- Data cleaning
 - Conclusion
 
 Here are some of the risks and assumptions we make with respect to the data and our model:
@@ -165,6 +166,7 @@ df['reviews'] = df['results'].apply(get_review)
 df['job_link'] = df['results'].apply(get_job_link)
 ```
 
+Let's check out how many results we got for each city.
 
 
 ```python
@@ -211,6 +213,7 @@ df.count()
     dtype: int64
 
 
+It looks like most of the job postings don't have a salary listed, so let's filter those jobs out.
 
 
 ```python
@@ -268,7 +271,7 @@ df_uniq.shape
 
 
 
-To recap so far, we webscraped 62,855 data science jobs from 14 different cities across the US.  That yielded us 2,229 jobs that had salaries posted, but when we dropped duplicate job postings it yielded us only 203 unique jobs.  This is a lot less than we expected and we'll need to keep that number of observations in mind when we put together the logistic regression model. Also, given the low number of observations we need to double check our risks and assumptions (to be revisited in Conclusion section).
+To recap so far, we webscraped 62,855 data science jobs from 14 different cities across the US.  That yielded us 2,229 jobs that had salaries posted, but when we dropped duplicate job postings it yielded us only 203 unique jobs.  This is a lot less than we expected and we'll need to keep that number of observations in mind when we put together the logistic regression model. Also, given the low number of observations we probably need to double check some of our risks and assumptions.
 
 
 ```python
@@ -280,6 +283,8 @@ df_uniq.reset_index(inplace=True)
 # Slice out index
 df_uniq = df_uniq.iloc[:,1:]
 ```
+
+## Data cleaning
 
 Now here's where things get tricky and a litle unorthodox.  We want to access the full job descriptions to search for certain keywords and the 'job_link' column in the our dataframe will allow us to do that.  However, there are multiple instances where the links are broken.  Anytime we perform a 'get request' we will get an error.  If we use the apply method (like we did above) it will break for the entire column.  
 
@@ -317,6 +322,8 @@ df_summary = pd.DataFrame(summary,columns=['summary'])
 # Convert entire dataframe to lowercase
 df_summary = df_summary.apply(lambda x: x.str.lower())
 ```
+
+Now that we have all the relevant job posting data, let's search the job summaries for certain keywords that might given us insight into whether the job is a low or high paying job.
 
 
 ```python
@@ -449,33 +456,11 @@ df_summary['nn'] = df_summary['summary'].apply(get_nn)
 
 
 
-```python
-df_summary.shape
-```
-
-
-
-
-    (203, 9)
-
-
-
 
 ```python
 # Slice out 'summary' column since it's no longer needed
 df_summary = df_summary.iloc[:,1:]
 ```
-
-
-```python
-df_summary_slice.shape
-```
-
-
-
-
-    (203, 8)
-
 
 
 
@@ -546,120 +531,6 @@ df['high_low'] = df['salary'].apply(high_low)
 ```
 
 
-```python
-df.head()
-```
-
-
-
-
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>city</th>
-      <th>company</th>
-      <th>salary</th>
-      <th>reviews</th>
-      <th>junior</th>
-      <th>senior</th>
-      <th>python</th>
-      <th>excel</th>
-      <th>big_data</th>
-      <th>phd</th>
-      <th>ml</th>
-      <th>nn</th>
-      <th>high_low</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>New+York</td>
-      <td>City of New York</td>
-      <td>59984.5</td>
-      <td>91</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>New+York</td>
-      <td>Envisagenics, Inc.</td>
-      <td>87500.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>New+York</td>
-      <td>Kennedy Unlimited Inc, Professional Staffing</td>
-      <td>115000.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>New+York</td>
-      <td>Averity</td>
-      <td>157500.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>New+York</td>
-      <td>Beeswax</td>
-      <td>147500.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 
 ```python
 ax = df['salary'].hist(bins=15);
@@ -683,7 +554,7 @@ X = pd.get_dummies(df.iloc[:,[0,3,4,5,6,7,8,9,10,11]])
 y = df['high_low']
 ```
 
-We scale the features (namely the 'reviews' column) before passing them into the logistic regression model. After that we will use GridSearchCV to optimize the model over an array of C values (the inverse of regularization strength) and compare between the l1 and l2 penalties.  Then we will fit the model with the optimized parameters and compute our cross validation accuracy score.  Because we have so many features, 23, compared to the total number of observations, 203, we want to make sure our C range goes very low in order to encourage a high regularization strength.  This will enable us to constrain the beta coefficients of the logistic regression model and reduce the feature importance of some of the lesser significant features (and in the case of the l1 norm it will outright eliminate some features). Also, because of the limited number of datapoints, we want to use an unusually high k value for the k-fold cross validation.  By using a high k-fold (in our case we chose cv=30) it allows us to train on more datapoints when predicting on the left out fold.   
+We scale the features (namely the 'reviews' column) before passing them into the logistic regression model. After that we will use GridSearchCV to optimize the model over an array of C values (the inverse of regularization strength) and compare between the l1 and l2 penalties.  Then we will fit the model with the optimized parameters and compute our cross validation accuracy score.  Because we have so many features, 23, compared to the total number of observations, 203, we want to make sure our C range goes very low in order to encourage a high regularization strength.  This will enable us to constrain the beta coefficients of the logistic regression model and reduce the feature importance of some of the lesser significant features (and in the case of the l1 norm it will outright eliminate some features). Also, because of the limited number of datapoints, we opt to use a high k value for the k-fold cross validation.  By using a high k-fold (in our case we chose cv=30) it allows us to train on more datapoints when predicting on the left out fold.   
 
 
 ```python
