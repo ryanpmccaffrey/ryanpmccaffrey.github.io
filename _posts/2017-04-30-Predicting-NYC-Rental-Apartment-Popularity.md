@@ -1,7 +1,7 @@
 ---
 layout: post
 image: '/img/renthop.png'
-title: "Predicting NYC Apartment Popularity"
+title: "Predicting the Popularity of NYC Rental Apartments"
 subtitle: "Category: Kaggle Competition (15 min read)"
 ---
 
