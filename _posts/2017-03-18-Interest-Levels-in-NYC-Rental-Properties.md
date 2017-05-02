@@ -9,12 +9,14 @@ subtitle: "Category: Kaggle Competition"
 Finding a the right NYC apartment can be one of the most daunting aspects of living in NYC.  And there are few things New Yorkers cherish more than their tiny space they call home.  Although NYC is one of the priciest cities to live in, it certainly doesn't lack options.  For this week's project I'll turn my attention to a Kaggle competition where I'll be predicting the popularity of various NYC rental apartments based on listing information found on [Renthop.com](https://www.renthop.com/).
 
 ![jpg](/img/renthop_files/nyc_apartment.jpg)
+*Figure 1 - Sample apartment image from listing on Renthop.com.*
 
 This post gives an outline of my approach to solving the [Two Sigma Connect: Rental Listing Inquiries](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries) Kaggle competition.  This competition was as rewarding as it was challenging.  It featured a very diverse dataset (including geospatial, image, text, and temporal data) and was co-sponsored by Two Sigma Investments and Renthop.com.  The goal of the competition was to predict the popularity of various NYC rental properties based on listing information found on Renthop.com.  The problem was a multi-class problem in which we were tasked with predicting the associated probabilities of an apartment listing receiving "low", "medium" or "high" levels of interest.  Submissions were evaluated using a multi-class logarithmic loss metric.
 
 My final model consisted of an ensemble of gradient boosting (XGBoost), extremely randomized trees (ExtraTrees) and a two-level feedforward stacked metamodel (StackNet) that featured a wide variety of base learners.  In the end, I ranked **214 out of 2,489 competitors (top 9%)**.  You can find the final leaderboard [here](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/leaderboard).  
 
 ![png](/img/renthop_files/renthop_screenshot.png)
+*Figure 2 - Screenshot of Renthop.com homepage.*
 
 ## About the Data
 
