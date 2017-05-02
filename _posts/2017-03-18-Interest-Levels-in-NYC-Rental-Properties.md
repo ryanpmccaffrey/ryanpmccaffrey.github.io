@@ -9,7 +9,7 @@ subtitle: "Category: Kaggle Competition (15 min read)"
 Finding the right apartment can be one of the most daunting aspects of living in New York City.  And there are few things New Yorkers cherish more than the tiny space they call home.  Although NYC is one of the priciest cities to live in, it certainly doesn't lack options.  For this week's project I'll turn my attention to a Kaggle competition where I'll be predicting the popularity of various NYC rental apartments based on listing information found on [Renthop.com](https://www.renthop.com/).
 
 ![jpg](/img/renthop_files/nyc_apartment.jpg)
-*Figure 1 - Sample apartment image from listing on Renthop.com.*
+*Figure 1 - Apartment image from sample listing on Renthop.com.*
 
 This post gives an outline of my approach to solving the [Two Sigma Connect: Rental Listing Inquiries](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries) Kaggle competition.  The competition was as rewarding as it was challenging.  It featured a very diverse dataset (including geospatial, image, text, and temporal data) and was co-sponsored by Two Sigma Investments and Renthop.com.  The goal of the competition was to answer the question: “How much interest will a new rental listing on RentHop receive?”.  The problem was a multi-class problem in which we were tasked with predicting the associated probabilities of an apartment listing receiving "low", "medium" or "high" levels of interest.  Submissions were evaluated using a [multi-class logarithmic loss](https://www.kaggle.com/wiki/LogLoss) metric.
 
