@@ -71,3 +71,6 @@ In the final analysis I was able to transform the original 14 features into 300+
 *Figure 7 - Representation of stacked and ensembled final model.*
 
 ## Conclusion
+
+![png](/img/renthop_files/final_leaderboard.png)
+*Figure 8 - Snapshot of Kaggle final leaderboard.*
