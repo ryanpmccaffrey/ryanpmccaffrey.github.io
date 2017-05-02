@@ -12,11 +12,11 @@ This post gives an outline of my approach to solving the [Two Sigma Connect: Ren
 
 My final model consisted of an ensemble of gradient boosting (XGBoost), extremely randomized trees (ExtraTrees) and a two-level feedforward stacked metamodel (StackNet) that featured a wide variety of base learners.  In the end, I ranked 214 out of 2,489 competitors (top 9%).  You can find the final leaderboard [here](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/leaderboard).  
 
-![png](/img/renthop_project/renthop_screenshot.png)
-
 ## About the Data
 
 The target variable was called *interest_level* and consisted of three categories: *low*, *medium*, and *high*.  There were also 14 original input features: *bathrooms*, *bedrooms*, *building_id*, *created*, *description*, *display_address*, *features*, *latitude*, *listing_id*, *longitude*, *manager_id*, *photos*, *price*, and *street_address*.  Below is a depiction of the original input features.
+
+
 
 ## Feature Engineering
 
