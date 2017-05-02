@@ -11,9 +11,9 @@ Finding the right apartment can be one of the most daunting aspects of living in
 ![jpg](/img/renthop_files/nyc_apartment.jpg)
 *Figure 1 - Apartment image from sample listing on Renthop.com.*
 
-This post gives an outline of my approach to solving the [Two Sigma Connect: Rental Listing Inquiries](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries) Kaggle competition.  The competition was as rewarding as it was challenging.  It featured a very diverse dataset (including geospatial, image, text, and temporal data) and was co-sponsored by Two Sigma Investments and Renthop.com.  The goal of the competition was to answer the question: “How much interest will a new rental listing on RentHop receive?”.  The problem was a multi-class problem in which we were tasked with predicting the associated probabilities of an apartment listing receiving "low", "medium" or "high" levels of interest.  Submissions were evaluated using a [multi-class logarithmic loss](https://www.kaggle.com/wiki/LogLoss) metric.
+This post gives an outline of my approach to solving the [Two Sigma Connect: Rental Listing Inquiries](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries) Kaggle competition.  The competition was as rewarding as it was challenging.  It featured a very diverse dataset (including geospatial, image, text, and temporal data) and was co-sponsored by Two Sigma Investments and Renthop.com.  The goal of the competition was to answer the question: “How much interest will a new rental listing on RentHop receive?”  The problem was a multi-class one in which we were tasked with predicting the associated probabilities of an apartment listing receiving "low", "medium" or "high" levels of interest.  Submissions were evaluated using a [multi-class logarithmic loss](https://www.kaggle.com/wiki/LogLoss) metric.
 
-My final model consisted of an ensemble of gradient boosting (XGBoost), extremely randomized trees (ExtraTrees) and a two-level feedforward stacked metamodel (StackNet) that featured a wide variety of base learners.  In the end, I ranked **214 out of 2,489 competitors (top 9%)**.  You can find the final leaderboard [here](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/leaderboard).  
+My final model consisted of an ensemble of gradient boosting (XGBoost), extremely randomized trees (ExtraTrees) and a two-level feedforward stacked metamodel (StackNet) that featured a wide variety of base learners.  In the end, I placed **214 out of 2,489 competitors (top 9%)**.  You can find the final leaderboard [here](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/leaderboard).  
 
 ![png](/img/renthop_files/renthop_screenshot.png)
 *Figure 2 - Screenshot of Renthop.com homepage.*
@@ -22,9 +22,10 @@ My final model consisted of an ensemble of gradient boosting (XGBoost), extremel
 
 The target variable was called *interest_level* and consisted of three categories: *low*, *medium*, and *high*.  There were also 14 original input features: *bathrooms*, *bedrooms*, *building_id*, *created*, *description*, *display_address*, *features*, *latitude*, *listing_id*, *longitude*, *manager_id*, *photos*, *price*, and *street_address*.  Below is a depiction of the original input features.
 
+![png](/img/renthop_files/about_the_data.png)
+*Figure 3 - A brief introduction to the raw dataset, including feature and target labels.*
+
 The target variable, interest_level, is defined by the number of inquiries a listing has in the duration that the listing was live on the site. 
-
-
 
 ## Feature Engineering
 
@@ -33,14 +34,18 @@ Because of the diversity of the dataset I thought feature engineering was going 
 Below is an overview of some of the feature engineering techniques I used along with a brief discussion of their relative feature importance:
 
 ![png](/img/renthop_files/feature_engineering.png)
-*Figure 3 - Overview of feature engineering applied to independent variables.*
+*Figure 4 - Overview of feature engineering applied to independent variables.*
 
 - **Geospatial density**: For every apartment listing I calculated the number of other apartment listings within a 5 block radius. My intuition was that denser areas will have more competition and thus lower overall interest. This was mostly true, but the feature importance wasn't as good as I hoped it would be.
 - **Distance to city center**: I calculated the distance of each apartment to the center coordinates of NYC, which ended up being somewhere inside Central Park.  This feature was useful for the same reason listed above: the farther you get from the center of the city the less populated the area tends to become.  The data showed that less population 
+
+![png](/img/renthop_files/geospatial_workflow.png)
+*Figure 5 - Geospatial analysis workflow including imputation of spurious latitude/longitude values and outlier removal.*
+
 - **Neighborhood clustering**: I used unsupervised clustering (KMeans) to create 40 different neighborhoods across NYC. I clustered solely on latitude and longitude and it worked fairly well actually. Using this I could compare apartment prices to the median apartment price for each neighborhood. These were in the top 15% of feature importance.  Prior attempts to use the Google API resulted in me getting kicked off (too many API calls in a single day) and I found that the Python Reverse Geocoder package was not accurate enough to discern neighborhood information within NYC.  See below for the KMeans clustering that was used as a proxy for neighborhood.  Spurious geospatial coordinates (e.g. latitude/longitude = 0) were imputed by calling the Google API with the street address and then using the latitude and longitude outputs to reclassify the geo-coordinates.  I constrained all remaining outliers to be within the 1st and 99th latitude/longitude percentiles, which essentially formed a box around NYC.
 
 ![png](/img/renthop_files/neighborhood_clustering.png)
-*Figure 4 - KMeans clustering (K=40) used as a proxy for estimating NYC neighborhoods.*
+*Figure 6 - KMeans clustering (K=40) used as a proxy for estimating NYC neighborhoods.*
 
 - **Datetime objects**: I broke the created column down into smaller, more relevant time objects such as week, day of week, month, hour, etc.  Minutes and year were dropped as they added no value.
 - **Normalized parts of speech**: I looked at 18 different parts of speech (e.g., nouns, adverbs, conjuctions, etc.) on the description column and then normalized these by the total number of description words per row. Many of these were surprisingly high on my feature importance ranking, but adding them actually lowered my overall score. Perhaps this meant these features were highly correlated with other features. Anyway, I didn't explore that, I just dropped them and moved on. These were not included in my final model.
@@ -63,6 +68,6 @@ In the final analysis I was able to transform the original 14 features into 300+
 ## Model Selection
 
 ![png](/img/renthop_files/final_model.png)
-*Figure 5 - Representation of stacked and ensembled final model.*
+*Figure 7 - Representation of stacked and ensembled final model.*
 
 ## Conclusion
