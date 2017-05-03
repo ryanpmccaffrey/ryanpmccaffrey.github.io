@@ -62,7 +62,7 @@ Below is an overview of some of the feature engineering techniques I used along 
 - **Flagging "weird" prices**: I defined "weird" prices as anything that didn't end in a 0, 5 or 9. My intuition here was that people may be turned off to an apartment if the monthly rent is somewhat random, for example, \$2171 as opposed to \$2100. This feature ended up having basically no importance to the model.
 - **"Price per" features**: Features derived from the price (e.g., price per bedroom, price to median price of a neighborhood, etc.) really moved the needle in terms of improving model performance.  The trick was using the price feature to create valuable insights.  For example, if we calculate the ratio of the price of an apartment to the median price of all other apartments in the building we can create a sense of whether or not that particular listing is a "good deal".  We can also use the ratio of price to number of bedrooms or bathrooms as a proxy for estimating the price per square foot of the apartment.
 - **Photo metadata**: I extracted simple features from the metadata of the photos, such as file size, type, pixel sizes, etc.  I also looked at the number of photos per listing and, surprisingly, found that more images often led to lower interest levels (perhaps more images reveal more apartment flaws?).  The most important feature from the photo metadata was shared by [KazAnova](https://www.kaggle.com/kazanova) in the Kaggle forums, where he revealed that by extracting the timestamp of the folders containing all of the apartment images one could achieve significant gains on the leaderboard.
-- **Manager and building "skill"**: These features are credited to [gdy5](https://www.kaggle.com/guoday), which I discovered in the Kaggle forums.  The premise behind the feature is to essentially use Bayesian statistics to calculate a posterior probability (probability of interest_level given manager_id or building_id) with information about the target variable.  This led to significant gains in the performance of my models and was perhaps the single greatest boost I received from any engineered feature.  These variables were about the highest feature importance.
+- **Manager and building "skill"**: These features are credited to [gdy5](https://www.kaggle.com/guoday), which I discovered in the Kaggle forums.  The premise behind the feature is to essentially use Bayesian statistics to calculate a posterior probability (probability of interest_level given manager_id or building_id) with information about the target variable.  This led to significant gains in the performance of my models and was perhaps the single greatest boost I received from any engineered feature.  These variables were of the highest feature importance.
 
 
 In the final analysis I was able to transform the original 14 features into 300+ new features that I input into my models.
@@ -72,7 +72,19 @@ In the final analysis I was able to transform the original 14 features into 300+
 ![png](/img/renthop_files/final_model.png)
 *Figure 7 - Graphical depiction of stacked and ensembled final model.*
 
-## Conclusion
+## Conclusions
+
+
+There are always things I could have done better.  For this project the big elephant in the room was always the 85Gb of images.  If I had more time I would have liked to perform deep feature extraction of the images.  It would have been nice even to develop a flag that could detect whether the image was showing a blueprint or an actual picture of the apartment, or a flag to detect whether or not the image had a watermark (possibly signifying a higher end apartment listing).  Perhaps converting the image data into frequency space and looking at the frequency components would have been useful (e.g., do higher frequencies indicate clutter?).  I think looking at the image brightness and contrast would have also led to slight bumps in my model performance.  
+
+After thinking about it for a while, here are the four key takeaway points I came up with for this project:
+
+- Reasonable predictions of NYC rental property interest were achieved
+- Feature engineering was crucial to improving model performance
+- Feature tuning with RF does not always translate to other models
+- Stack generalization works well (so does XGBoost) and necessary to have success in Kaggle competitions 
+
+Lastly, here's a glimpse of the final leaderboard.
 
 ![png](/img/renthop_files/final_leaderboard.png)
 *Figure 8 - Snapshot of Kaggle final leaderboard.*
