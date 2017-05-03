@@ -9,7 +9,7 @@ The Internet Movie Database (IMDB) is the go-to online database of movies, telev
 
 
 ![jpg](/img/project-6_files/imdb_top_250.jpg)
-*Figure 1 - Collection of posters of all-time IMDB top 250 films. ([Source](http://pre07.deviantart.net/6cd1/th/pre/f/2011/035/6/4/imdb_top_250_movie_poster_by_saxon1964-d38rnod.jpg)) *
+*Figure 1 - Collection of posters of all-time IMDB top 250 films. ([Source](http://pre07.deviantart.net/6cd1/th/pre/f/2011/035/6/4/imdb_top_250_movie_poster_by_saxon1964-d38rnod.jpg))*
 
 This project will focus around the following sections and is intended for a technical audience:
 
