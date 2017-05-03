@@ -75,14 +75,14 @@ In the final analysis I was able to transform the original 14 features into 300+
 ## Conclusions
 
 
-There are always things I could have done better.  For this project the big elephant in the room was always the 85Gb of images.  If I had more time I would have liked to perform deep feature extraction of the images.  It would have been nice even to develop a flag that could detect whether the image was showing a blueprint or an actual picture of the apartment, or a flag to detect whether or not the image had a watermark (possibly signifying a higher end apartment listing).  Perhaps converting the image data into frequency space and looking at the frequency components would have been useful (e.g., do higher frequencies indicate clutter?).  I think looking at the image brightness and contrast would have also led to slight bumps in my model performance.  
+There will always be things I could have done better.  For this project the big elephant in the room was always the 85Gb of images.  If I had more time I would have liked to perform deep feature extraction of the images.  It would also have been nice to develop a flag that could detect whether the image was showing a blueprint or an actual picture of the apartment, or a flag to detect whether or not the image had a watermark (possibly signifying a higher end apartment listing).  Perhaps converting the image data into frequency space and looking at the frequency components would have been useful (e.g., do higher frequencies indicate clutter?).  Or even looking at the image brightness and contrast I believe would have led to slight bumps in model performance.  
 
-After thinking about it for a while, here are the four key takeaway points I came up with for this project:
+After reflecting on the competition, here are the four key takeaway points I came up with for this project:
 
 - Reasonable predictions of NYC rental property interest were achieved
 - Feature engineering was crucial to improving model performance
-- Feature tuning with RF does not always translate to other models
-- Stack generalization works well (so does XGBoost) and necessary to have success in Kaggle competitions 
+- Feature selection/tuning with RF does not always translate to other models
+- Stack generalization works well (so does XGBoost) and is necessary to have success in Kaggle competitions 
 
 Lastly, here's a glimpse of the final leaderboard.
 
