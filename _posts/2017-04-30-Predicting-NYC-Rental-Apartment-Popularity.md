@@ -69,13 +69,15 @@ In the final analysis I was able to transform the original 14 features into 300+
 
 ## Model Selection
 
+To get up and running I started with a random forest classifier model.  I used that model to get general information about which features were important and which were seemingly just mostly adding noise. 
+
 ![png](/img/renthop_files/final_model.png)
 *Figure 7 - Graphical depiction of stacked and ensembled final model.*
 
 ## Conclusions
 
 
-There will always be things I could have done better.  For this project the big elephant in the room was always the 85Gb of images.  If I had more time I would have liked to perform deep feature extraction of the images.  It would also have been nice to develop a flag that could detect whether the image was showing a blueprint or an actual picture of the apartment, or a flag to detect whether or not the image had a watermark (possibly signifying a higher end apartment listing).  Perhaps converting the image data into frequency space and looking at the frequency components would have been useful (e.g., do higher frequencies indicate clutter?).  Or even looking at the image brightness and contrast I believe would have led to slight bumps in model performance.  
+There will always be things I could have done better.  For this project the big elephant in the room was the 85Gb of images.  If I had more time I would have liked to perform deep feature extraction on the images.  It would also have been nice to develop a flag that could detect whether the image was showing a floorplan or an actual picture of the apartment, or a flag to detect whether or not the image had a watermark (possibly signifying a higher end apartment listing).  Perhaps converting the image data into frequency space and looking at the frequency components would have been useful (e.g., do higher frequencies indicate clutter?).  Or even looking at the image brightness and contrast I believe would have led to slight bumps in model performance.  
 
 After reflecting on the competition, here are the four key takeaway points I came up with for this project:
 
