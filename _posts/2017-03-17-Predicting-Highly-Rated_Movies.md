@@ -8,7 +8,7 @@ subtitle: "Category: APIs + PCA + Random Forest (10 min read)"
 The Internet Movie Database (IMDB) is the go-to online database of movies, television, and videogames. This week we will use two IMDB APIs ([ImdbPie](https://github.com/richardasaurus/imdb-pie) and [OMDB](http://www.omdbapi.com/)) to access movie data to predict whether or not a movie is in the top 250 of all-time movies.  We will build a random forest model and examine its feature importance to determine what factors contribute to a movie becoming highly rated.  As part of our data cleaning process we will also perform textual analysis on the movie plot summaries and use principal component analysis (PCA) to reduce the number of plot summary feature dimensions. 
 
 
-![jpg](/img/project-6_files/imdb_top_250.png)
+![jpg](/img/project-6_files/imdb_top_250.jpg)
 *Figure 8 - Collection of posters of all-time IMDB top 250 films.*
 
 This project will focus around the following sections and is intended for a technical audience:
