@@ -19,22 +19,22 @@ After submitting the data exercise, your submission is graded by someone from ou
 I hope this post is helpful for data scientist applicants who are currently going through Uber’s interview process or potential future applicants.  
 
 ![png](/img/project-7_files/image1.png)
-*Figure 2 - Blah blah blah.*
+*Figure 2 - Slide 1: Problem statement.*
 
 ![png](/img/project-7_files/image2.png)
-*Figure 3 - Blah blah blah.*
+*Figure 3 - Slide 2: Data cleaning and feature engineering.*
 
 ![png](/img/project-7_files/image3.png)
-*Figure 4 - Blah blah blah.*
+*Figure 4 - Slide 3: Model selection.*
 
 ![png](/img/project-7_files/image4.png)
-*Figure 5 - Blah blah blah.*
+*Figure 5 - Slide 4: Business insights and actionable ideas.*
 
 ![png](/img/project-7_files/image5.png)
-*Figure 6 - Blah blah blah.*
+*Figure 6 - Slide 5: Ideas for future improvements.*
 
 ![png](/img/project-7_files/image6.png)
-*Figure 7 - Blah blah blah.*
+*Figure 7 - Slide 6: Ideas for more data.*
 
 Above are the data exercise slides I presented during my final interview -- I hope they can serve as a good starting point for your own analysis.  Good luck!
 
