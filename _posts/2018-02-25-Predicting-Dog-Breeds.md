@@ -1,8 +1,8 @@
 ---
 layout: post
 image: '/img/dog2.jpg'
-title: "Predicting Dog Breeds Using Deep Learning"
-subtitle: "Category: CNNs + Pytorch"
+title: "Using Deep Learning to Predict Dog Breeds"
+subtitle: "Category: CNNs + PyTorch"
 ---
 
 Blog post coming soon.
