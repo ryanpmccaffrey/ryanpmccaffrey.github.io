@@ -13,6 +13,8 @@ Finding the right apartment can be one of the most daunting aspects of living in
 
 This post gives an outline of my approach to solving the [Two Sigma Connect: Rental Listing Inquiries](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries) Kaggle competition.  The competition was as rewarding as it was challenging.  It featured a very diverse dataset (including geospatial, image, text, and temporal data) and was co-sponsored by Two Sigma Investments and Renthop.com.  The goal of the competition was to answer the question: “How much interest will a new rental listing on RentHop receive?”  The problem was a multi-class one where we were tasked with predicting the associated probabilities of an apartment listing receiving "low", "medium" or "high" levels of interest.  Submissions were evaluated using a [multi-class logarithmic loss](https://www.kaggle.com/wiki/LogLoss) metric.
 
+$$\int e^{-kx} \, dx = -\frac{1}{k} e^{-kx}$$
+
 My final model consisted of an ensemble of gradient boosting (XGBoost), extremely randomized trees (ExtraTrees) and a two-level feedforward stacked metamodel (StackNet) that featured a wide variety of base learners.  In the end, I placed **214 out of 2,489 competitors (top 9%)**.  You can find the final leaderboard [here](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/leaderboard).  
 
 ![png](/img/renthop_files/renthop_screenshot.png)
