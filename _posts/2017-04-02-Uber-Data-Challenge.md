@@ -4,6 +4,7 @@ image: '/img/uber.png'
 title: "Solving the Uber Data Challenge"
 subtitle: "Category: Interview Prep (10 min read)"
 ---
+This is another sentence. 
 
 No matter what field you're in or what role you're aiming for it seems like the interview process is difficult for everyone.  As a data scientist, during the interview process you’re often expected to analyze data, implement machine learning models, and/or use statistical techniques to derive insights from sample datasets.  In this post I’ll go over my approach to tackling Uber’s data scientist take-home exercise in the hopes of helping future data scientist applicants better prepare for their interview process.  I’ll also try to give helpful insights along the way (I went through the process last summer and flew out for the final interview, but ultimately didn’t get the job).  You can check out my Github repo for their exercise problems along with my solutions.  There were two parts to the exercise and applicants are given one week to submit their solutions.  In addition to the exercise, data scientist applicants can expect to go through at least two phone screenings, one of which should be technically oriented.  
 
