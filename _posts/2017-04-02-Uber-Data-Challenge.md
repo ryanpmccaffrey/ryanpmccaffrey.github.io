@@ -4,34 +4,6 @@ image: '/img/uber.png'
 title: "Solving the Uber Data Challenge"
 subtitle: "Category: Interview Prep (10 min read)"
 ---
-This is another sentence. 
-
-$$ q_i = \frac{exp(z_i/T)}{\sum_j exp(z_i/T)} $$
-
-Betting data comes in the form of weekly odds of a home win, draw or loss.
-
-Let $y_{i,j,w} = logit ( p_{i,j,w} ) $ be the log odds of observed probability of a home win for team i against team j in week w.
-
-We can model $ E [ logit (p_{i,j,w} ] = \theta_{i,w} - \theta_{j,w} + \alpha + \alpha_{Ti} $
-
-where: 
-$
-
-\begin{align}
-\theta_{i,w} &: \text{team strength rating of team i in week w} \\
-\theta_{j,w} &: \text{team strength rating of team j in week w} \\
-\alpha &: \text{baseline home advtange for all teams} \\
-\alpha_{Ti} &: \text{home advantage of team i}  \\
-\\
-\text{For any team i we can assume that the team strength in week w is given as follows:} \\
-\theta_{i,w} & \sim N(\gamma\theta_{i, w-1}, \tau_{w}^2) \\
-\text{where: }
-\theta_{i,w-1} &: \text{team strength for team i in week w-1} \\
-\gamma &: \text{autocorrelation at order 1 for team strength in week w} \\
-\tau_{w} &: \text{week-level uncertainity in the evolution of team strength} \\
-
-\end{align}
-$
 
 No matter what field you're in or what role you're aiming for it seems like the interview process is difficult for everyone.  As a data scientist, during the interview process you’re often expected to analyze data, implement machine learning models, and/or use statistical techniques to derive insights from sample datasets.  In this post I’ll go over my approach to tackling Uber’s data scientist take-home exercise in the hopes of helping future data scientist applicants better prepare for their interview process.  I’ll also try to give helpful insights along the way (I went through the process last summer and flew out for the final interview, but ultimately didn’t get the job).  You can check out my Github repo for their exercise problems along with my solutions.  There were two parts to the exercise and applicants are given one week to submit their solutions.  In addition to the exercise, data scientist applicants can expect to go through at least two phone screenings, one of which should be technically oriented.  
 
