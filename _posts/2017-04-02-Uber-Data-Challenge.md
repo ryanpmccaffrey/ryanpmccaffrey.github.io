@@ -6,6 +6,8 @@ subtitle: "Category: Interview Prep (10 min read)"
 ---
 This is another sentence. 
 
+$$ q_i = \frac{exp(z_i/T)}{\sum_j exp(z_i/T)} $$
+
 Betting data comes in the form of weekly odds of a home win, draw or loss.
 
 Let $y_{i,j,w} = logit ( p_{i,j,w} ) $ be the log odds of observed probability of a home win for team i against team j in week w.
